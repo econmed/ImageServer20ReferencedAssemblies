@@ -567,6 +567,10 @@ namespace log4net.Appender
 				}
 			}
 		}
+		///<summary>
+		///Class that represents a mutex based locking
+		///model
+		///</summary>
         public class MutexLock : LockingModelBase, IDisposable
         {
             private string m_filename;
@@ -706,7 +710,10 @@ namespace log4net.Appender
                 }
             }
 
-            public void Dispose()
+            /// <summary>
+	    /// IDisposable implementation.
+	    /// </summary>
+	    public void Dispose()
             {
                 if (m_mutex != null)
                 {

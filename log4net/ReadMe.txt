@@ -8,4 +8,5 @@ The log4net source can be downloaded with subversion from here:
 http://svn.apache.org/repos/asf/logging/log4net/tags/log4net-1.2.10/
 
 Simply replace FileAppender.cs in the src/Appender directory, and 
-rebuild the library to reproduce the log4net dll file.
+rebuild the library to reproduce the log4net dll file.  Note that NAnt
+is used to rebuild the library with a strong name.
