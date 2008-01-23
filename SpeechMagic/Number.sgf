@@ -1,0 +1,242 @@
+#JSGF V1.0;
+/**
+	* integer number grammar
+	* all exported non terminals have a local variable called
+	*    'num'
+	* that stores the number, the grammar obviously ambiguous
+	* @example	twenty six			=> num = 26
+*/
+grammar IntegerNumber { PspLanguage = 15; };
+export <NUMBER>;
+export	<WholeNumber_0>;
+export	<WholeNumber_1_9>;
+export	<WholeNumber_1_99>;
+export	<WholeNumber_10_99>;
+
+declarations
+{
+	integer num	: <NUMBER>;
+}
+
+<NUMBER> = <WholeNumber_1_99> { num = <WholeNumber_1_99>.num; };
+
+<WholeNumber_10_99>
+	= <_10_99>			{ integer num = <_10_99>.num; };
+<WholeNumber_1_99>
+	= <WholeNumber_1_9>	{ integer num = <WholeNumber_1_9>.num; }
+	| <_10_19>			{ integer num = <_10_19>.num; }
+	| <_20_99>			{ integer num = <_20_99>.num; };
+<WholeNumber_0>= (zero | O | null)	{ integer num = 0; };
+<WholeNumber_1_9>  
+	= one			{ integer num = 1; }
+	| two			{ integer num = 2; }
+	| three			{ integer num = 3; }
+	| four			{ integer num = 4; }
+	| five			{ integer num = 5; }
+	| six			{ integer num = 6; }
+	| seven			{ integer num = 7; }
+	| eight			{ integer num = 8; }
+	| nine			{ integer num = 9; };
+<_10_19> 
+	= ten			{ integer num = 10; }
+	| eleven			{ integer num = 11; }
+	| twelve			{ integer num = 12; }
+	| thirteen			{ integer num = 13; }
+	| fourteen			{ integer num = 14; }
+	| fifteen			{ integer num = 15; }
+	| sixteen			{ integer num = 16; }
+	| seventeen			{ integer num = 17; }
+	| eighteen			{ integer num = 18; }
+	| nineteen			{ integer num = 19; };
+<_20_99>
+	= twenty			{ integer num = 20; }
+	| twenty-one			{ integer num = 21; }
+	| twenty-two			{ integer num = 22; }
+	| twenty-three			{ integer num = 23; }
+	| twenty-four			{ integer num = 24; }
+	| twenty-five			{ integer num = 25; }
+	| twenty-six			{ integer num = 26; }
+	| twenty-seven			{ integer num = 27; }
+	| twenty-eight			{ integer num = 28; }
+	| twenty-nine			{ integer num = 29; }
+	| thirty			{ integer num = 30; }
+	| thirty-one			{ integer num = 31; }
+	| thirty-two			{ integer num = 32; }
+	| thirty-three			{ integer num = 33; }
+	| thirty-four			{ integer num = 34; }
+	| thirty-five			{ integer num = 35; }
+	| thirty-six			{ integer num = 36; }
+	| thirty-seven			{ integer num = 37; }
+	| thirty-eight			{ integer num = 38; }
+	| thirty-nine			{ integer num = 39; }
+	| forty			{ integer num = 40; }
+	| forty-one			{ integer num = 41; }
+	| forty-two			{ integer num = 42; }
+	| forty-three			{ integer num = 43; }
+	| forty-four			{ integer num = 44; }
+	| forty-five			{ integer num = 45; }
+	| forty-six			{ integer num = 46; }
+	| forty-seven			{ integer num = 47; }
+	| forty-eight			{ integer num = 48; }
+	| forty-nine			{ integer num = 49; }
+	| fifty			{ integer num = 50; }
+	| fifty-one			{ integer num = 51; }
+	| fifty-two			{ integer num = 52; }
+	| fifty-three			{ integer num = 53; }
+	| fifty-four			{ integer num = 54; }
+	| fifty-five			{ integer num = 55; }
+	| fifty-six			{ integer num = 56; }
+	| fifty-seven			{ integer num = 57; }
+	| fifty-eight			{ integer num = 58; }
+	| fifty-nine			{ integer num = 59; }
+	| sixty			{ integer num = 60; }
+	| sixty-one			{ integer num = 61; }
+	| sixty-two			{ integer num = 62; }
+	| sixty-three			{ integer num = 63; }
+	| sixty-four			{ integer num = 64; }
+	| sixty-five			{ integer num = 65; }
+	| sixty-six			{ integer num = 66; }
+	| sixty-seven			{ integer num = 67; }
+	| sixty-eight			{ integer num = 68; }
+	| sixty-nine			{ integer num = 69; }
+	| seventy			{ integer num = 70; }
+	| seventy-one			{ integer num = 71; }
+	| seventy-two			{ integer num = 72; }
+	| seventy-three			{ integer num = 73; }
+	| seventy-four			{ integer num = 74; }
+	| seventy-five			{ integer num = 75; }
+	| seventy-six			{ integer num = 76; }
+	| seventy-seven			{ integer num = 77; }
+	| seventy-eight			{ integer num = 78; }
+	| seventy-nine			{ integer num = 79; }
+	| eighty			{ integer num = 80; }
+	| eighty-one			{ integer num = 81; }
+	| eighty-two			{ integer num = 82; }
+	| eighty-three			{ integer num = 83; }
+	| eighty-four			{ integer num = 84; }
+	| eighty-five			{ integer num = 85; }
+	| eighty-six			{ integer num = 86; }
+	| eighty-seven			{ integer num = 87; }
+	| eighty-eight			{ integer num = 88; }
+	| eighty-nine			{ integer num = 89; }
+	| ninety			{ integer num = 90; }
+	| ninety-one			{ integer num = 91; }
+	| ninety-two			{ integer num = 92; }
+	| ninety-three			{ integer num = 93; }
+	| ninety-four			{ integer num = 94; }
+	| ninety-five			{ integer num = 95; }
+	| ninety-six			{ integer num = 96; }
+	| ninety-seven			{ integer num = 97; }
+	| ninety-eight			{ integer num = 98; }
+	| ninety-nine			{ integer num = 99; };
+	 
+
+<_10_99>
+	= <_10_19>			{ integer num = <_10_19>.num; }
+	| <_20_99>			{ integer num = <_20_99>.num ; };
+ 
+      
+/* start transcription */
+eight	 { PHONETIC = "Y t"; };
+eighteen	 { PHONETIC = "Y t i i n"; };
+eighty	 { PHONETIC = "Y t i i"; };
+eighty-eight	 { PHONETIC = "Y t i i Y t"; };
+eighty-five	 { PHONETIC = "Y t i i f 2 v"; };
+eighty-four	 { PHONETIC = "Y t i i f o r"; };
+eighty-nine	 { PHONETIC = "Y t i i n 2 n"; };
+eighty-one	 { PHONETIC = "Y t i i w V n"; };
+eighty-seven	 { PHONETIC = "Y t i i s e v N"; };
+eighty-six	 { PHONETIC = "Y t i i s I k s"; };
+eighty-three	 { PHONETIC = "Y t i i T r i"; };
+eighty-two	 { PHONETIC = "Y t i i t u"; };
+eleven	 { PHONETIC = "@ l e v N; i l e v N"; };
+fifteen	 { PHONETIC = "f I f t i n"; };
+fifty	 { PHONETIC = "f I f t i"; };
+fifty-eight	 { PHONETIC = "f I f t i Y t"; };
+fifty-five	 { PHONETIC = "f I f t i f 2 v"; };
+fifty-four	 { PHONETIC = "f I f t i f o r"; };
+fifty-nine	 { PHONETIC = "f I f t i n 2 n"; };
+fifty-one	 { PHONETIC = "f I f t i w V n"; };
+fifty-seven	 { PHONETIC = "f I f t i s e v N"; };
+fifty-six	 { PHONETIC = "f I f t i s I k s"; };
+fifty-three	 { PHONETIC = "f I f t i T r i"; };
+fifty-two	 { PHONETIC = "f I f t i t u"; };
+five	 { PHONETIC = "f 2 v"; };
+forty	 { PHONETIC = "f o r t i"; };
+forty-eight	 { PHONETIC = "f o r t i Y t"; };
+forty-five	 { PHONETIC = "f o r t i f 2 v"; };
+forty-four	 { PHONETIC = "f o r t i f o r"; };
+forty-nine	 { PHONETIC = "f o r t i n 2 n"; };
+forty-one	 { PHONETIC = "f o r t i w V n"; };
+forty-seven	 { PHONETIC = "f o r t i s e v N"; };
+forty-six	 { PHONETIC = "f o r t i s I k s"; };
+forty-three	 { PHONETIC = "f o r t i T r i"; };
+forty-two	 { PHONETIC = "f o r t i t u"; };
+four	 { PHONETIC = "f o r"; };
+fourteen	 { PHONETIC = "f o r t i n"; };
+nine	 { PHONETIC = "n 2 n"; };
+nineteen	 { PHONETIC = "n 2 n t i n"; };
+ninety	 { PHONETIC = "n 2 n t i; n 2 n i"; };
+ninety-eight	 { PHONETIC = "n 2 n i Y t; n 2 n t i Y t"; };
+ninety-five	 { PHONETIC = "n 2 n i f 2 v; n 2 n t i f 2 v"; };
+ninety-four	 { PHONETIC = "n 2 n i f o r; n 2 n t i f o r"; };
+ninety-nine	 { PHONETIC = "n 2 n i n 2 n; n 2 n t i n 2 n"; };
+ninety-one	 { PHONETIC = "n 2 n i w V n; n 2 n t i w V n"; };
+ninety-seven	 { PHONETIC = "n 2 n i s e v N; n 2 n t i s e v N"; };
+ninety-six	 { PHONETIC = "n 2 n i s I k s; n 2 n t i s I k s"; };
+ninety-three	 { PHONETIC = "n 2 n i T r i; n 2 n t i T r i"; };
+ninety-two	 { PHONETIC = "n 2 n i t u; n 2 n t i t u"; };
+null	 { PHONETIC = "n V l"; };
+O	 { PHONETIC = "O"; };
+one	 { PHONETIC = "w V n"; };
+seven	 { PHONETIC = "s e v N"; };
+seventeen	 { PHONETIC = "s e v N t i n"; };
+seventy	 { PHONETIC = "s e v N t i; s e v N i"; };
+seventy-eight	 { PHONETIC = "s e v N i Y t; s e v N t i Y t"; };
+seventy-five	 { PHONETIC = "s e v N i f 2 v; s e v N t i f 2 v"; };
+seventy-four	 { PHONETIC = "s e v N i f o r; s e v N t i f o r"; };
+seventy-nine	 { PHONETIC = "s e v N i n 2 n; s e v N t i n 2 n"; };
+seventy-one	 { PHONETIC = "s e v N i w V n; s e v N t i w V n"; };
+seventy-seven	 { PHONETIC = "s e v N i s e v N; s e v N t i s e v N"; };
+seventy-six	 { PHONETIC = "s e v N i s I k s; s e v N t i s I k s"; };
+seventy-three	 { PHONETIC = "s e v N i T r i; s e v N t i T r i"; };
+seventy-two	 { PHONETIC = "s e v N i t u; s e v N t i t u"; };
+six	 { PHONETIC = "s I k s"; };
+sixteen	 { PHONETIC = "s I k s t i n"; };
+sixty	 { PHONETIC = "s I k s t i"; };
+sixty-eight	 { PHONETIC = "s I k s t i Y t"; };
+sixty-five	 { PHONETIC = "s I k s t i f 2 v"; };
+sixty-four	 { PHONETIC = "s I k s t i f o r"; };
+sixty-nine	 { PHONETIC = "s I k s t i n 2 n"; };
+sixty-one	 { PHONETIC = "s I k s t i w V n"; };
+sixty-seven	 { PHONETIC = "s I k s t i s e v N"; };
+sixty-six	 { PHONETIC = "s I k s t i s I k s"; };
+sixty-three	 { PHONETIC = "s I k s t i T r i"; };
+sixty-two	 { PHONETIC = "s I k s t i t u"; };
+ten	 { PHONETIC = "t e n"; };
+thirteen	 { PHONETIC = "T 3 r t i n"; };
+thirty	 { PHONETIC = "T 3 r t i"; };
+thirty-eight	 { PHONETIC = "T 3 r t i Y t"; };
+thirty-five	 { PHONETIC = "T 3 r t i f 2 v"; };
+thirty-four	 { PHONETIC = "T 3 r t i f o r"; };
+thirty-nine	 { PHONETIC = "T 3 r t i n 2 n"; };
+thirty-one	 { PHONETIC = "T 3 r t i w V n"; };
+thirty-seven	 { PHONETIC = "T 3 r t i s e v N"; };
+thirty-six	 { PHONETIC = "T 3 r t i s I k s"; };
+thirty-three	 { PHONETIC = "T 3 r t i T r i"; };
+thirty-two	 { PHONETIC = "T 3 r t i t u"; };
+three	 { PHONETIC = "T r i"; };
+twelve	 { PHONETIC = "t w e l v"; };
+twenty	 { PHONETIC = "t w e n t i; t w e n i"; };
+twenty-eight	 { PHONETIC = "t w e n t i Y t; t w e n i si Y t"; };
+twenty-five	 { PHONETIC = "t w e n t i f 2 v; t w e n i f 2 v"; };
+twenty-four	 { PHONETIC = "t w e n t i f o r; t w e n i f o r"; };
+twenty-nine	 { PHONETIC = "t w e n t i n 2 n; t w e n i n 2 n"; };
+twenty-one	 { PHONETIC = "t w e n t i w V n; t w e n i w V n"; };
+twenty-seven	 { PHONETIC = "t w e n t i s e v N; t w e n i s e v N"; };
+twenty-six	 { PHONETIC = "t w e n t i s I k s; t w e n i s I k s"; };
+twenty-three	 { PHONETIC = "t w e n t i T r i; t w e n i T r i"; };
+twenty-two	 { PHONETIC = "t w e n t i t u; t w e n i t u"; };
+two	 { PHONETIC = "t u"; };
+zero	 { PHONETIC = "z I r O; z i r O"; };
+/* end transcription */
